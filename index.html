@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embed Page</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #myIframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Opcional: elimina el borde del iframe */
+        }
+    </style>
     <script>
         // Función para obtener el valor de un parámetro de la URL
         function getQueryParam(param) {
@@ -25,7 +39,8 @@
     </script>
 </head>
 <body>
-    <iframe id="myIframe" width="100%" height="100%" frameborder="0"></iframe>
+    <iframe id="myIframe"></iframe>
 </body>
 </html>
+
 
