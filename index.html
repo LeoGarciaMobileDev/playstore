@@ -1,1 +1,31 @@
-<p>hello world</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embed Page</title>
+    <script>
+        // Función para obtener el valor de un parámetro de la URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Al cargar la página
+        window.onload = function() {
+            // Obtener el token de los parámetros de la URL
+            const token = getQueryParam('token');
+            if (token) {
+                // Establecer el src del iframe con el token
+                document.getElementById('myIframe').src = `https://leopoldo.dev/familyboard.php?token=${token}`;
+            } else {
+                console.error('No se encontró el parámetro "token" en la URL.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <iframe id="myIframe" width="100%" height="500px" frameborder="0"></iframe>
+</body>
+</html>
+
